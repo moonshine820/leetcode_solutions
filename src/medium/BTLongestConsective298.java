@@ -4,7 +4,7 @@ public class BTLongestConsective298 {
 	
 	private int max = 0;//record the longest consective substree
 	
-    public int longestConsecutive(TreeNode root) {
+    public int longestConsecutive(TNode root) {
         if(root == null) {
         	return 0;
         }       
@@ -15,12 +15,12 @@ public class BTLongestConsective298 {
     /**
      * dfs treenode, if root's value bigger than its parent, add this to the subtree.
      * if it doesn't, length become to 1.
-     * @param root  current treenode
+     * @param root  current TNode
      * @param curr  record current consective substree length
      * @param target current root value
      * @return
      */
-    public void dfs(TreeNode root, int curr, int target) {
+    public void dfs(TNode root, int curr, int target) {
     	if(root == null) {
     		return;
     	}
@@ -36,10 +36,10 @@ public class BTLongestConsective298 {
     
     public static void main(String[] args) {
     	BTLongestConsective298 longestCon = new BTLongestConsective298();
-    	TreeNode root = new TreeNode(5);
-    	root.left = new TreeNode(7);
-    	root.left.left = new TreeNode(9);
-    	root.right = new TreeNode(8);
+    	TNode root = new TNode(5);
+    	root.left = new TNode(7);
+    	root.left.left = new TNode(9);
+    	root.right = new TNode(8);
     	System.out.print(longestCon.longestConsecutive(root));
     }
 }
@@ -47,9 +47,9 @@ public class BTLongestConsective298 {
 /**
  * Definition for a binary tree node.
  *  */
-class TreeNode {
+class TNode {
 	int val;
-	TreeNode left;
-	TreeNode right;
-	TreeNode(int x) { val = x; }
+	TNode left;
+	TNode right;
+	TNode(int x) { val = x; }
 }
